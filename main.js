@@ -38,7 +38,7 @@ function main() {
 		client.channels.cache.get('870892950689812483').send('Hello here!');
 		adapter.subscribeForeignStates('mqtt.0.info.discord_msg');
 	});
-	client.login('ODcwODk0ODIwNDY4NjAwODQy.YQTaAQ.Fq4JAn_4Y8lKEbNPxzDH5-8HyPg');
+	client.login(adapter.config.bot_token);
 }
 
 function sendMessage(id, state) {
