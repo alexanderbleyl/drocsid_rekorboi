@@ -1,0 +1,12 @@
+{
+	"name": "drocsid_rekorboi",
+	"version": "1.0.0",
+	"main": "main.js",
+	"scripts": {
+		"release": "release-script"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"discord.js": "12.5.3"
+	}
+}
