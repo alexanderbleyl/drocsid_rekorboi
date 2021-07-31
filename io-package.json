@@ -1,0 +1,15 @@
+{
+	"common": {
+		"name": "drocsid_rekorboi",
+		"version": "1.0.0",
+		"title": "iobroker_discord",
+		"desc": {
+			"en": "This adapter does this and that",
+			"de": "Dieser Aadpter macht dies und jenes"
+		},
+		"platform": "Javascript/Node.js",
+		"mode": "daemon",
+		"enabled": true,
+		"license": "MIT"
+	},
+}
