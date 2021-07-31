@@ -1,0 +1,50 @@
+<html>
+
+<link rel="stylesheet" type="text/css" href="../../lib/css/themes/jquery-ui/redmond/jquery-ui.min.css"/>
+<script type="text/javascript" src="../../lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+<script type="text/javascript" src="../../lib/js/jquery-ui-1.10.3.full.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+<script type="text/javascript" src="../../js/translate.js"></script>
+<script type="text/javascript" src="../../js/adapter-settings.js"></script>
+
+<script type="text/javascript">
+	// the function loadSettings has to exist ...
+	function load(settings, onChange) {
+		if (!settings) return;
+		
+		$('.value').each(function () {
+			var key = $(this).attr('id');
+			// example: select elements with id=key and class=value and insert value
+			$('#' + key + '.value').val(settings[key]).on('change', function() {
+				onChange();
+			}).on('keyup', function() {
+				onChange();
+			});
+		});
+		
+		onChange(false);
+	}
+	
+	// ... and the function save has to exist.
+	// you have to make sure the callback is called with the settings object as first param!
+	function save(callback) {
+		var obj = {};
+		$('.value').each(function () {
+			var $this = $(this);
+			obj[$this.attr('id')] = $this.val();
+		});
+		
+		callback(obj);
+	}
+</script>
+
+<!-- you have to put your config page in a div with id adapter-container -->
+<div id="adapter-container">
+	
+	<table>
+		<tr><td><label for="bot_token" class="translate">Bot-Token:</label></td><td><input  class="value" id="bot_token" type="text" /></td></tr>
+	</table>
+</div>
+</html>
