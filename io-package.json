@@ -41,7 +41,7 @@
             "zh-cn": "适配器开发模板"
         },
         "authors": [
-            "Author <noone@example.com>"
+            "Author <author@mail.com>"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
