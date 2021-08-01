@@ -11,5 +11,5 @@
 		"mode": "daemon",
 		"enabled": true,
 		"license": "MIT"
-	},
+	}
 }
