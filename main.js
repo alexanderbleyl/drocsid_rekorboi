@@ -13,6 +13,8 @@ const utils = require('@iobroker/adapter-core');
 
 const Discord = require('discord.js');
 
+let client = null;
+
 class Template extends utils.Adapter {
 
     /**
@@ -41,7 +43,7 @@ class Template extends utils.Adapter {
         this.log.info('config bot_token: ' + this.config.bot_token);
     
     
-        const client = new Discord.Client();
+        client = new Discord.Client();
         client.on('ready', () => {
             this.log.info('Bot ready - logged in as: ' + client.user.tag);
         
@@ -146,13 +148,11 @@ class Template extends utils.Adapter {
         if (state) {
             // The state was changed
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-            function sendMessage(id, state) {
-                try {
-                    this.log.info(`send message to Discord "${state.val}"`);
-                    client.channels.cache.get('870892950689812483').send(state.val);
-                } catch (e) {
-                    this.log.info(`could not send message "${state.val}"`);
-                }
+            try {
+                this.log.info(`send message to Discord "${state.val}"`);
+                client.channels.cache.get('870892950689812483').send(state.val);
+            } catch (e) {
+                this.log.info(`could not send message "${state.val}"`);
             }
         } else {
             // The state was deleted
