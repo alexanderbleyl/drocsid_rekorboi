@@ -43,9 +43,9 @@ class Template extends utils.Adapter {
     
         const client = new Discord.Client();
         client.on('ready', () => {
-            console.log(`Logged in as ${client.user.tag}`, client.channels);
+            this.log.info('Bot ready - logged in as: ' + client.user.tag);
         
-            client.channels.cache.get('870892950689812483').send('Hello here!');
+            client.channels.cache.get('870892950689812483').send('Bot connected - Hello here!');
         });
         client.login(this.config.bot_token);
 
@@ -148,8 +148,11 @@ class Template extends utils.Adapter {
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             function sendMessage(id, state) {
                 try {
+                    this.log.info(`send message to Discord "${state.val}"`);
                     client.channels.cache.get('870892950689812483').send(state.val);
-                } catch (e) {}
+                } catch (e) {
+                    this.log.info(`could not send message "${state.val}"`);
+                }
             }
         } else {
             // The state was deleted
