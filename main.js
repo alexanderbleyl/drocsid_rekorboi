@@ -3,7 +3,7 @@
 'use strict';
 
 const utils       = require('@iobroker/adapter-core');
-const adapterName = require('./package.json').name.split('.').pop();
+const adapterName = utils.Adapter('drocsid_rekorboi');
 
 const Discord = require('discord.js');
 
