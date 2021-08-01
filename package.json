@@ -1,17 +1,22 @@
 {
-	"name": "iobroker.drocsid_rekorboi",
-	"version": "1.0.0",
-	"main": "main.js",
-	"scripts": {
-		"release": "release-script"
-	},
-	"homepage": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"discord.js": "12.5.3"
-	}
+  "name": "iobroker.drocsid_rekorboi",
+  "version": "0.0.1",
+  "description": "Template for adapter development",
+  "author": {
+    "name": "Author",
+    "email": "noone@example.com"
+  },
+  "homepage": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^2.5.0"
+  },
+  "devDependencies": {
+    "discord.js": "12.5.3"
+  },
+  "main": "main.js"
 }
