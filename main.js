@@ -11,6 +11,8 @@ const utils = require('@iobroker/adapter-core');
 // Load your modules here, e.g.:
 // const fs = require("fs");
 
+const Discord = require('discord.js');
+
 class Template extends utils.Adapter {
 
     /**
@@ -37,6 +39,15 @@ class Template extends utils.Adapter {
         // The adapters config (in the instance object everything under the attribute "native") is accessible via
         // this.config:
         this.log.info('config bot_token: ' + this.config.bot_token);
+    
+    
+        const client = new Discord.Client();
+        client.on('ready', () => {
+            console.log(`Logged in as ${client.user.tag}`, client.channels);
+        
+            client.channels.cache.get('870892950689812483').send('Hello here!');
+        });
+        client.login(this.config.bot_token);
 
         /*
         For every state in the system there has to be also an object of type state
@@ -58,7 +69,8 @@ class Template extends utils.Adapter {
         */
 
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-        this.subscribeStates('discord_msg');
+        // this.subscribeStates('discord_msg');
+        this.subscribeForeignStates('mqtt.0.info.discord_msg');
         // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
         // this.subscribeStates('lights.*');
         // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -134,6 +146,11 @@ class Template extends utils.Adapter {
         if (state) {
             // The state was changed
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+            function sendMessage(id, state) {
+                try {
+                    client.channels.cache.get('870892950689812483').send(state.val);
+                } catch (e) {}
+            }
         } else {
             // The state was deleted
             this.log.info(`state ${id} deleted`);
