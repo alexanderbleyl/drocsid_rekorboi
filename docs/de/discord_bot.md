@@ -123,6 +123,27 @@ Um diese Nachrichten zu erhalten, hol dir [Discord](https://discord.com/download
 [Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),
 oder [iOS](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1).
 
+### blockly & JS
+
+Sofern Channel-ID und Bot-Token vergeben sind, geht auch das Senden von Nachrichten aus Scripten.
+
+#### JS
+
+```
+
+// Instanz läuft als 'discord_bot.0'
+
+sendTo('discord_bot.0', 'send', {
+    text: 'Nachricht aus Script', 
+});
+```
+
+#### Blockly
+
+Desweiteren kommt mit dem Adapter ein neues Blockly dazu, was diese Funktion abbildet:
+
+![blockly](../img/12_blockly.png)
+
 ### **WORK IN PROGRESS**
 * initial release, automated testing still missing
 
