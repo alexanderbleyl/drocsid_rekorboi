@@ -41,7 +41,8 @@ class DiscordBot extends utils.Adapter {
      * @param {object} obj
      */
     message(obj) {
-        console.log('we receive a message from e.g. blockly', obj);
+        this.log.info('we receive a message from e.g. blockly');
+        this.log.info(JSON.stringify(obj));
         if (typeof obj === 'object' && obj.message && this.config.channel_id) {
             if (obj.command === 'send' ) {
                 // e.g. send email or pushover or whatever
