@@ -1,6 +1,7 @@
 ![Logo](admin/template.png)
-# ioBroker.template
+# ioBroker.discord_bot
 
+<!--
 [![NPM version](https://img.shields.io/npm/v/iobroker.template.svg)](https://www.npmjs.com/package/iobroker.template)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.template.svg)](https://www.npmjs.com/package/iobroker.template)
 ![Number of Installations (latest)](https://iobroker.live/badges/template-installed.svg)
@@ -10,126 +11,126 @@
 [![NPM](https://nodei.co/npm/iobroker.template.png?downloads=true)](https://nodei.co/npm/iobroker.template/)
 
 **Tests:** ![Test and Release](https://github.com/Author/ioBroker.template/workflows/Test%20and%20Release/badge.svg)
-
-## template adapter for ioBroker
-
-Template for adapter development
-
-## Developer manual
-This section is intended for the developer. It can be deleted later
-
-### Getting started
-
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.template`
-1. Initialize the current folder as a new git repository:  
-    ```bash
-    git init
-    git add .
-    git commit -m "Initial commit"
-    ```
-1. Link your local repository with the one on GitHub:  
-    ```bash
-    git remote add origin https://github.com/Author/ioBroker.template
-    ```
-
-1. Push all files to the GitHub repo:  
-    ```bash
-    git push origin master
-    ```
-1. Add a new secret under https://github.com/Author/ioBroker.template/settings/secrets. It must be named `AUTO_MERGE_TOKEN` and contain a personal access token with push access to the repository, e.g. yours. You can create a new token under https://github.com/settings/tokens.
-
-1. Head over to [main.js](main.js) and start programming!
-
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
-
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description |
-|-------------|-------------|
-| `test:js` | Executes the tests you defined in `*.test.js` files. |
-| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:unit` | Tests the adapter startup with unit tests (fast, but might require module mocks to work). |
-| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `check` | Performs a type-check on your code (without compiling anything). |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
-| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
-
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-Since you have chosen GitHub Actions as your CI service, you can 
-enable automatic releases on npm whenever you push a new git tag that matches the form 
-`v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-Since you installed the release script, you can create a new
-release simply by calling:
-```bash
-npm run release
-```
-Additional command line options for the release script are explained in the
-[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
-
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually on a local ioBroker installation
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-    ```bash
-    npm pack
-    ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-    ```bash
-    cd /opt/iobroker
-    npm i /path/to/tarball.tgz
-    ```
-
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.template`)
-1. Execute `iobroker upload template` on the ioBroker host
-
-## Changelog
-<!--
-    Placeholder for the next version (at the beginning of the line):
-    ### **WORK IN PROGRESS**
 -->
 
+## Discord adapter for ioBroker
+
+This adapter sends Messages to a Discord Channel using your own Bot.
+
+Discord is a lot more easy to use than a WhatsApp-Bot (no phone number necessary) and saver than Telegram.
+
+The following setup takes under 5 minutes and is completely free.
+
+### Setup:
+
+If you have none, than first of all you'll need an Account at [Discord](https://discord.com) and log in with it.
+
+---
+
+#### creating a new Channel, getting your Channel-ID:
+
+When logged into your Account, create a new Channel. In this example we will name it "house":
+1. Hit the "plus" Button:
+![Add a Server](admin/img/01_new_channel.png)
+
+
+2. Create your own new server:
+
+![create your own](admin/img/02_new_channel.png)
+
+
+3. ...for you and your friends:
+
+![for you](admin/img/03_new_channel.png)
+
+
+4. ...and give it a name (e.g. house):
+
+![name it](admin/img/04_new_channel.png)
+
+If this worked and you are in the Channel, the URL of your Browser contains your cache-ID which is the first thing you'll need.
+It looks something like this: _https://discord.com/channels/xxxxxxxxxxxxxxxxxx/876543210987654321_
+
+From this you need the last URL-Part, in this example it's __876543210987654321__
+
+That's the __Channel-ID__ needed for this Adapter.
+
+---
+
+#### creating a new Bot, getting your Bot-Token:
+
+When logged into Discord, open the [Developer Portal](https://discord.com/developers/applications).
+
+To get a Bot we need a new "Application":
+1. Hit the "New Application" Button:
+
+![new Application](admin/img/05_new_application.png)
+
+2. give your Apllication a name (e.g. "HouseBot")
+
+![name it](admin/img/06_new_application.png)
+
+3. go to the "Bot"-Tab and hit "Add Bot"
+
+![new Bot](admin/img/07_new_application.png)
+
+4. ...confirm it
+
+![confirm](admin/img/08_new_application.png)
+
+5. From here you can get your Bot-Token
+
+![bot-token](admin/img/09_new_application.png)
+
+That's the __Bot-Token__ needed for this Adapter.
+
+#### sending Messages from ioBroker
+
+With your channel-ID and your Bot-Token you now just need to choose a ioBroker state.
+
+Messages written into it will be sent to your Discord Channel via your newly created Bot.
+
+For example, we will create a new state inside your userdata-Folder:
+
+1. in your ioBroker, go to Objects, select e.g. the Folder "0_userdata" and the sub-Folder "0" and hit the "plus" Button:
+
+![new state](admin/img/10_new_state.png)
+
+2. the new Object is of type "state", and the value will be of type "string". Give it a name and save it
+
+![name it](admin/img/11_new_state.png)
+
+Your new state now has the full adress __0_userdata.0.discord_message__.
+
+That's your __state__-name which is the last thing this adapter needs.
+
+Whenever the content of this state changes, your Bot will send this into your Discord Channel.
+
+#### finaly
+
+Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ in the new instance of this adapter and you are ready to go.
+
+Everyone following your Channel will receive the Bot-Messages.
+
+To receive these messages, get [Discord](https://discord.com/download) either for [Windows](https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86),
+[Mac](https://discord.com/api/download?platform=osx),
+[Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),
+or [iOS](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1).
+
+Remember: only if the value in your state changes, the message gets send.
+
+Running multiple instances of this Adapter should work, but does not realy make sense.
+
 ### **WORK IN PROGRESS**
-* (Author) initial release
+* initial release, automated testing still missing
 
 ## License
-MIT License
+The MIT License (MIT)
 
-Copyright (c) 2021 Author <author@mail.com>
+Copyright (c) 2014-2019, AB
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

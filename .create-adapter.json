@@ -1,12 +1,12 @@
 {
-    "adapterName": "drocsid_rekorboi",
-    "description": "Template for adapter development",
-    "authorName": "Author",
-    "authorGithub": "Author",
-    "authorEmail": "author@mail.com",
+    "adapterName": "discord_bot",
+    "description": "send Messages from ioBroker to Discord",
+    "authorName": "AB",
+    "authorGithub": "https://github.com/alexanderbleyl",
+    "authorEmail": "bleyl.alexander@web.de",
     "gitRemoteProtocol": "HTTPS",
     "ci": "gh-actions",
-    "dependabot": "yes",
+    "dependabot": "no",
     "license": "MIT License",
     "releaseScript": "yes",
     "startMode": "daemon",
@@ -23,7 +23,7 @@
     "adminReact": "no",
     "tabReact": "no",
     "language": "JavaScript",
-    "title": "Template (JavaScript)",
+    "title": "Discord-Bot",
     "tools": [
         "ESLint",
         "type checking"

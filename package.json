@@ -1,16 +1,16 @@
 {
-  "name": "iobroker.drocsid_rekorboi",
-  "version": "0.0.1",
-  "description": "Template for adapter development",
+  "name": "iobroker.discord_bot",
+  "version": "1.0.0",
+  "description": "Set a Message as a State which on changed get send to Discord",
   "author": {
     "name": "Author",
-    "email": "author@mail.com"
+    "email": "bleyl.alexander@web.de"
   },
-  "homepage": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi",
+  "homepage": "https://github.com/alexanderbleyl/ioBroker.discord_bot",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexanderbleyl/ioBroker.drocsid_rekorboi"
+    "url": "https://github.com/alexanderbleyl/ioBroker.discord_bot"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.5.0",

@@ -14,15 +14,7 @@ const EMPTY = '';
 const translate = require('./lib/tools').translateText;
 const languages = {
     en: {},
-    de: {},
-    ru: {},
-    pt: {},
-    nl: {},
-    fr: {},
-    it: {},
-    es: {},
-    pl: {},
-    'zh-cn': {}
+    de: {}
 };
 
 function lang2data(lang) {
@@ -242,15 +234,7 @@ gulp.task('updatePackages', function (done) {
 
         newNews[pkg.version] = {
             en: 'news',
-            de: 'neues',
-            ru: 'новое',
-            pt: 'novidades',
-            nl: 'nieuws',
-            fr: 'nouvelles',
-            it: 'notizie',
-            es: 'noticias',
-            pl: 'nowości',
-            'zh-cn': '新'
+            de: 'neues'
         };
         iopackage.common.news = Object.assign(newNews, news);
     }
