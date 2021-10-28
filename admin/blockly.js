@@ -47,8 +47,6 @@ Blockly.Blocks['discord_bot'] = {
 		this.appendValueInput('MESSAGE')
 			.appendField(Blockly.Words['discord_bot_message'][systemLang]);
 		
-		if (input.connection) input.connection._optional = true;
-		
 		this.setInputsInline(false);
 		this.setPreviousStatement(true, null);
 		this.setNextStatement(true, null);
