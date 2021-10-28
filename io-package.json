@@ -16,29 +16,28 @@
             "en": "send Messages from ioBroker to Discord",
             "de": "Nachrichten vom ioBroker zu Discord schicken"
         },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "discord_bot.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/alexanderbleyl/ioBroker.discord_bot/master/admin/discord_bot.png",
+        "keywords": [
+            "Discord Bot"
+        ],
+        "readme": "https://github.com/alexanderbleyl/ioBroker.discord_bot/blob/master/README.md",
+        "loglevel": "info",
+        "type": "general",
+        "license": "MIT",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "materialize": true,
+        "restartAdapters": [],
         "authors": [
             "Author <bleyl.alexander@web.de>"
         ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
         "main": "main.js",
-        "enabled": true,
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "general",
-        "compact": true,
-        "materialize": true,
         "materializeTab": true,
-        "adminTab": {
-            "singleton": true,
-            "name": {
-                "en": "Discord-Bot",
-                "de": "Discord-Bot"
-            },
-            "link": "",
-            "fa-icon": "info"
-        },
-        "supportCustoms": true,
         "dependencies": [
             {
                 "js-controller": ">=2.0.0"

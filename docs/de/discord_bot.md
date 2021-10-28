@@ -1,4 +1,4 @@
-![Logo](admin/template.png)
+![Logo](admin/discord_bot.png)
 # ioBroker.discord_bot
 
 <!--
