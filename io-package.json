@@ -32,6 +32,7 @@
         "connectionType": "local",
         "dataSource": "push",
         "materialize": true,
+        "blockly": true,
         "restartAdapters": [],
         "authors": [
             "Author <bleyl.alexander@web.de>"

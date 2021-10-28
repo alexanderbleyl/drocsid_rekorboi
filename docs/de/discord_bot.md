@@ -116,6 +116,8 @@ Diese 3 Sachen, __Channel-ID__, __Bot-Token__ und __state__ (falls gewünscht ab
 
 Jeder der deinem Channel folgt bekommt deine Bot-Nachrichten.
 
+Man kann auch ein Bild schicken, dazu einfach den kompletten Link als Nachricht setzen.
+
 Um diese Nachrichten zu erhalten, hol dir [Discord](https://discord.com/download) für [Windows](https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86),
 [Mac](https://discord.com/api/download?platform=osx),
 [Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),

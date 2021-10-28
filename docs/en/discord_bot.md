@@ -116,6 +116,8 @@ Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ (if not defaul
 
 Everyone following your Channel will receive the Bot-Messages.
 
+You can even send pictures. Just insert the full URL as a message.
+
 To receive these messages, get [Discord](https://discord.com/download) either for [Windows](https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x86),
 [Mac](https://discord.com/api/download?platform=osx),
 [Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),
