@@ -26,7 +26,7 @@
         ],
         "readme": "https://github.com/alexanderbleyl/ioBroker.discord_bot/blob/master/README.md",
         "loglevel": "info",
-        "type": "general",
+        "type": "messaging",
         "license": "MIT",
         "compact": true,
         "connectionType": "local",
@@ -36,8 +36,6 @@
         "authors": [
             "Author <bleyl.alexander@web.de>"
         ],
-        "main": "main.js",
-        "materializeTab": true,
         "dependencies": [
             {
                 "js-controller": ">=2.0.0"
