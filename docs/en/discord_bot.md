@@ -1,4 +1,4 @@
-![Logo](admin/discord_bot.png)
+![Logo](../img/discord_bot.png)
 # ioBroker.discord_bot
 
 <!--
@@ -31,22 +31,22 @@ If you have none, than first of all you'll need an Account at [Discord](https://
 
 When logged into your Account, create a new Channel. In this example we will name it "house":
 1. Hit the "plus" Button:
-![Add a Server](docs/img/01_new_channel.png)
+   ![Add a Server](../img/01_new_channel.png)
 
 
 2. Create your own new server:
 
-![create your own](docs/img/02_new_channel.png)
+![create your own](../img/02_new_channel.png)
 
 
 3. ...for you and your friends:
 
-![for you](docs/img/03_new_channel.png)
+![for you](../img/03_new_channel.png)
 
 
 4. ...and give it a name (e.g. house):
 
-![name it](docs/img/04_new_channel.png)
+![name it](../img/04_new_channel.png)
 
 If this worked and you are in the Channel, the URL of your Browser contains your cache-ID which is the first thing you'll need.
 It looks something like this: _https://discord.com/channels/xxxxxxxxxxxxxxxxxx/876543210987654321_
@@ -64,23 +64,23 @@ When logged into Discord, open the [Developer Portal](https://discord.com/develo
 To get a Bot we need a new "Application":
 1. Hit the "New Application" Button:
 
-![new Application](docs/img/05_new_application.png)
+![new Application](../img/05_new_application.png)
 
 2. give your Apllication a name (e.g. "HouseBot")
 
-![name it](docs/img/06_new_application.png)
+![name it](../img/06_new_application.png)
 
 3. go to the "Bot"-Tab and hit "Add Bot"
 
-![new Bot](docs/img/07_new_application.png)
+![new Bot](../img/07_new_application.png)
 
 4. ...confirm it
 
-![confirm](docs/img/08_new_application.png)
+![confirm](../img/08_new_application.png)
 
 5. From here you can get your Bot-Token
 
-![bot-token](docs/img/09_new_application.png)
+![bot-token](../img/09_new_application.png)
 
 That's the __Bot-Token__ needed for this Adapter.
 
@@ -94,11 +94,11 @@ For example, we will create a new state inside your userdata-Folder:
 
 1. in your ioBroker, go to Objects, select e.g. the Folder "0_userdata" and the sub-Folder "0" and hit the "plus" Button:
 
-![new state](docs/img/10_new_state.png)
+![new state](../img/10_new_state.png)
 
 2. the new Object is of type "state", and the value will be of type "string". Give it a name and save it
 
-![name it](docs/img/11_new_state.png)
+![name it](../img/11_new_state.png)
 
 Your new state now has the full adress __0_userdata.0.discord_message__.
 

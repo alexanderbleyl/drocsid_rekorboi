@@ -8,6 +8,12 @@
   },
   "homepage": "https://github.com/alexanderbleyl/ioBroker.discord_bot",
   "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "discord",
+    "Smart Home",
+    "home automation"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/alexanderbleyl/ioBroker.discord_bot"

@@ -1,4 +1,4 @@
-![Logo](admin/discord_bot.png)
+![Logo](../img/discord_bot.png)
 # ioBroker.discord_bot
 
 <!--
@@ -31,22 +31,22 @@ Wenn du noch keinen hast, legst du dir als erstes einen Account bei [Discord](ht
 
 Wenn du dich also mit deinem Account angemeldet, erzeuge einen neuen Channel. Wir nennen ihn hier beispielhaft "house":
 1. Drück auf den "plus"-Button:
-![neuer Server](admin/img/01_new_channel.png)
+![neuer Server](../img/01_new_channel.png)
 
 
 2. lege deinen neuen "server" an:
 
-![deinen eigenen](admin/img/02_new_channel.png)
+![deinen eigenen](../img/02_new_channel.png)
 
 
 3. ...für dich und deine Freunde:
 
-![für dich](admin/img/03_new_channel.png)
+![für dich](../img/03_new_channel.png)
 
 
 4. ...und gib ihm einen Namen (z.B. house):
 
-![benennen](admin/img/04_new_channel.png)
+![benennen](../img/04_new_channel.png)
 
 Wenn das funktioniert hat und du in deinem neuen Channel bist, enthält deine Browser-URL deine cache-ID, was als erstes gebraucht wird.
 Das sollte also so aussehen: _https://discord.com/channels/xxxxxxxxxxxxxxxxxx/876543210987654321_
@@ -64,23 +64,23 @@ Wenn du in Discord eingeloggt bist, öffne das [Developer Portal](https://discor
 Um einen neune Bot zu erhalten brauchen wir zunächst eine neue "Application":
 1. Drücke also den "New Application"-Button:
 
-![neue Application](admin/img/05_new_application.png)
+![neue Application](../img/05_new_application.png)
 
 2. gib deiner Apllication einen Namen (z.B. "HouseBot")
 
-![benennen](admin/img/06_new_application.png)
+![benennen](../img/06_new_application.png)
 
 3. gehe zum "Bot"-Tab und drücke "Add Bot"
 
-![neuer Bot](admin/img/07_new_application.png)
+![neuer Bot](../img/07_new_application.png)
 
 4. ...bestätigen
 
-![bestätigen](admin/img/08_new_application.png)
+![bestätigen](../img/08_new_application.png)
 
 5. von dort bekommst du dein Bot-Token
 
-![bot-token](admin/img/09_new_application.png)
+![bot-token](../img/09_new_application.png)
 
 Das ist das __Bot-Token__ was für diesen Adapter gebraucht wird.
 
@@ -94,11 +94,11 @@ Wir legen zum Beispiel einen neuen Datenpunkt in deinem userdata-Ordner an:
 
 1. im ioBroker, gehe zu den Objekten, wähle z.B. den Ordner "0_userdata" und den Unterordner "0" aus und drücke den "plus" Button:
 
-![neuer Datenpunkt](admin/img/10_new_state.png)
+![neuer Datenpunkt](../img/10_new_state.png)
 
 2. Das neue Objekt ist vom Typ "Datenpunkt", der Zustandstyp ist ein "string". Gib dem ganzen noch einen Namen und speichere
 
-![benennen](admin/img/11_new_state.png)
+![benennen](../img/11_new_state.png)
 
 Dein neuer Datenpunkt hat die volle Adresse __0_userdata.0.discord_message__.
 
