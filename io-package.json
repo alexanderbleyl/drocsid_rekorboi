@@ -33,6 +33,7 @@
         "dataSource": "push",
         "materialize": true,
         "blockly": true,
+        "messagebox": true,
         "restartAdapters": [],
         "authors": [
             "Author <bleyl.alexander@web.de>"
