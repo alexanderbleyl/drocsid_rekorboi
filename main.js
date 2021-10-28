@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 
 let client = null;
 
-class Template extends utils.Adapter {
+class DiscordBot extends utils.Adapter {
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
      */
@@ -16,24 +16,38 @@ class Template extends utils.Adapter {
         });
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
-        this.on('unload', this.onUnload.bind(this));
+        this.on('message', this.message.bind(this));
     }
 
     /**
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
+        if(this.config.bot_token === '') {
+            this.log.error('No Bot-Token given!');
+            return;
+        }
         client = new Discord.Client();
         client.login(this.config.bot_token);
-        this.subscribeForeignStates(this.config.state);
+        if(this.config.state === '') {
+            this.subscribeStates('sendMessage');
+        } else {
+            this.subscribeForeignStates(this.config.state);
+        }
     }
 
     /**
-     * Is called when adapter shuts down - callback has to be called under any circumstances!
-     * @param {() => void} callback
+     * Is called if a subscribed state changes
+     * @param {Object} obj
      */
-    onUnload(callback) {
-        callback();
+    message(obj) {
+        if (typeof obj === 'object' && obj.message && this.config.channel_id) {
+            if (obj.command === 'send' ) {
+                // e.g. send email or pushover or whatever
+                this.log.info(`Send "${obj.message.text}"`);
+                client.channels.cache.get(this.config.channel_id).send(obj.message);
+            }
+        }
     }
 
     /**
@@ -61,8 +75,8 @@ if (require.main !== module) {
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
      */
-    module.exports = (options) => new Template(options);
+    module.exports = (options) => new DiscordBot(options);
 } else {
     // otherwise start the instance directly
-    new Template();
+    new DiscordBot();
 }

@@ -86,7 +86,11 @@ Das ist das __Bot-Token__ was für diesen Adapter gebraucht wird.
 
 #### Nachrichten von ioBroker schicken
 
-Mit deiner channel-ID und deinem Bot-Token brauchst du jetz nur noch ein Objekt im ioBroker anlegen.
+Generell wird beim Erzeugen einer Instanz dieses Adapter schon ein Objekt angelegt, mit dem Nachrichten gesendet werden könnne.
+
+Allerdings ist der Pfad zum Objekt auch im Admin-Panel der Instanz einstellbar, falls gewünscht, deshalb hier noch eine Erklärung dazu:
+
+Mit deiner Channel-ID und deinem Bot-Token brauchst du jetz nur noch ein Objekt im ioBroker anlegen.
 
 Texte welche dort hinein geschrieben werden, schicht dein neuer Bot dann an deinen Discord-Channel.
 
@@ -108,7 +112,7 @@ Immer wenn sich der Inhalt dieses Datenpunktes ändert, schickt dir dein Bot das
 
 #### zum schluss
 
-Diese 3 Sachen, __Channel-ID__, __Bot-Token__ und __state__ trägst du also in die neue Instanz dieses Adapters ein und fertig.
+Diese 3 Sachen, __Channel-ID__, __Bot-Token__ und __state__ (falls gewünscht abweichend von default-Wert) trägst du also in die neue Instanz dieses Adapters ein und fertig.
 
 Jeder der deinem Channel folgt bekommt deine Bot-Nachrichten.
 
@@ -116,10 +120,6 @@ Um diese Nachrichten zu erhalten, hol dir [Discord](https://discord.com/download
 [Mac](https://discord.com/api/download?platform=osx),
 [Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),
 oder [iOS](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1).
-
-Bedenke: nur wenn sich der Inhalt deines Datenpunktes __ändert__, wird eine Nachricht geschickt.
-
-Mehrere Instanzen dieses Adapters sollten fuktionieren, machen aber nicht wirklich Sinn.
 
 ### **WORK IN PROGRESS**
 * initial release, automated testing still missing

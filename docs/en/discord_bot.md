@@ -86,6 +86,10 @@ That's the __Bot-Token__ needed for this Adapter.
 
 #### sending Messages from ioBroker
 
+While creating an instance of this adapter comes an object with which messages can be sent.
+
+If you want to use another object, here's a discription of how it's done:
+
 With your channel-ID and your Bot-Token you now just need to choose a ioBroker state.
 
 Messages written into it will be sent to your Discord Channel via your newly created Bot.
@@ -108,7 +112,7 @@ Whenever the content of this state changes, your Bot will send this into your Di
 
 #### finaly
 
-Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ in the new instance of this adapter and you are ready to go.
+Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ (if not default) in the new instance of this adapter and you are ready to go.
 
 Everyone following your Channel will receive the Bot-Messages.
 
@@ -116,10 +120,6 @@ To receive these messages, get [Discord](https://discord.com/download) either fo
 [Mac](https://discord.com/api/download?platform=osx),
 [Android](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1),
 or [iOS](https://discordapp.page.link/?link=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.discord%26attemptId%3De4dc7dbf-5555-4257-b8ac-71fd09945649&utm_source=download&apn=com.discord&isi=985746746&ibi=com.hammerandchisel.discord&sd=Your%20place%20to%20talk%20with%20communities%20and%20friends.&efr=1).
-
-Remember: only if the value in your state changes, the message gets send.
-
-Running multiple instances of this Adapter should work, but does not realy make sense.
 
 ### **WORK IN PROGRESS**
 * initial release, automated testing still missing

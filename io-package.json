@@ -48,5 +48,18 @@
         "state": ""
     },
     "objects": [],
-    "instanceObjects": []
+    "instanceObjects": [
+        {
+            "_id": "sendMessage",
+            "type": "state",
+            "common": {
+                "name": "Send message",
+                "write": true,
+                "read": true,
+                "type": "string",
+                "role": "state"
+            },
+            "native": {}
+        }
+    ]
 }

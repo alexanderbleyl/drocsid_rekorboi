@@ -86,6 +86,10 @@ That's the __Bot-Token__ needed for this Adapter.
 
 #### sending Messages from ioBroker
 
+While creating an instance of this adapter comes an object with which messages can be sent.
+
+If you want to use another object, here's a discription of how it's done:
+
 With your channel-ID and your Bot-Token you now just need to choose a ioBroker state.
 
 Messages written into it will be sent to your Discord Channel via your newly created Bot.
@@ -108,7 +112,7 @@ Whenever the content of this state changes, your Bot will send this into your Di
 
 #### finaly
 
-Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ in the new instance of this adapter and you are ready to go.
+Enter these 3 things, __Channel-ID__, __Bot-Token__ and __state__ (if not default) in the new instance of this adapter and you are ready to go.
 
 Everyone following your Channel will receive the Bot-Messages.
 
