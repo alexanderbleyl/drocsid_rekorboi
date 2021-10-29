@@ -88,7 +88,7 @@ function main() {
 
 function receiveMessage() {
     adapter.log.info('receiver activated');
-    client.on('messageCreate', message => {
+    client.on('messageCreate', async message => {
         adapter.log.info(JSON.stringify(message));
     });
 }
