@@ -1,7 +1,7 @@
 'use strict';
 
 const utils = require('@iobroker/adapter-core');
-const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
 
 /**
  * The adapter instance
@@ -32,6 +32,10 @@ function startAdapter(options) {
             name: 'discord_bot',
             ready: main,
             stateChange: (id, state) => {
+                if(id.indexOf('receiveMessage') > 0) {
+                    return;
+                }
+                // adapter.log.info(`state ${id} - ${JSON.stringify(state)}`);
                 if (state && state.val != '') {
                     try {
                         sendMessageToDiscord(state.val);
@@ -75,16 +79,23 @@ function main() {
         adapter.log.error('No Bot-Token given!');
         return;
     }
-    client = new Discord.Client();
+    client = new Client({ intents: [Intents.FLAGS.GUILDS] });
     client.login(adapter.config.bot_token);
     if(adapter.config.state === '') {
         adapter.subscribeStates('sendMessage');
     } else {
         adapter.subscribeForeignStates(adapter.config.state);
     }
-    
-    // in this template all states changes inside the adapters namespace are subscribed
-    adapter.subscribeStates('sendMessage');
+    adapter.subscribeStates('receiveMessage');
+    receiveMessage();
+}
+
+function receiveMessage() {
+    client.on('message', async message => {
+        if (message.author.bot) return;
+        adapter.setStateAsync('receiveMessage', message.content, true);
+        adapter.log.info(`received mesage: '${message.content}'`);
+    });
 }
 
 // @ts-ignore parent is a valid property on module

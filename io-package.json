@@ -62,6 +62,18 @@
                 "role": "state"
             },
             "native": {}
+        },
+        {
+            "_id": "receiveMessage",
+            "type": "state",
+            "common": {
+                "name": "Receive message",
+                "write": true,
+                "read": true,
+                "type": "string",
+                "role": "state"
+            },
+            "native": {}
         }
     ]
 }

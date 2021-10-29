@@ -15,7 +15,7 @@
 
 ## Discord Adapter für ioBroker
 
-Dieser Adapter schickt Nachrichten an deinen Discord Channel mit Hilfe deines eigenen Bots.
+Dieser Adapter schickt und empfängt Nachrichten an/von deinen Discord Channel mit Hilfe deines eigenen Bots.
 
 Discord ist dabei einfacher zu nutzen als WhatsApp (braucht keine Handy Nummer o.ä.) und sicherer als Telegram.
 
@@ -109,6 +109,10 @@ Dein neuer Datenpunkt hat die volle Adresse __0_userdata.0.discord_message__.
 Das ist der __state__-Name was als letztes von diesem Adapter gebraucht wird.
 
 Immer wenn sich der Inhalt dieses Datenpunktes ändert, schickt dir dein Bot das als Nachricht an deinen Discord-Channel.
+
+#### Nachrichten aus Discord empfange
+
+In deiner Adapter-Instanz gibt es zusätzlich noch einen Datenpunkt 'receiveMessages' in dem die letzte Discord-Nachricht gespeichert wird.
 
 #### zum schluss
 
