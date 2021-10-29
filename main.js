@@ -87,16 +87,10 @@ function main() {
 }
 
 function receiveMessage() {
-    adapter.log.info('receiver activated');
     client.on('message', async message => {
-        adapter.log.info('on message');
         if (message.author.bot) return;
-        adapter.log.info(JSON.stringify(message));
-    });
-    client.on('messageCreate', async message => {
-        adapter.log.info('on messageCreate');
-        if (message.author.bot) return;
-        adapter.log.info(JSON.stringify(message));
+        adapter.setStateAsync('receiveMessage', message.content, true);
+        adapter.log.info(`received mesage: '${message.content}'`);
     });
 }
 
