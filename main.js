@@ -75,7 +75,7 @@ function main() {
         adapter.log.error('No Bot-Token given!');
         return;
     }
-    client = new Discord.Client();
+    client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"], partials: ["CHANNEL"] });
     client.login(adapter.config.bot_token);
     if(adapter.config.state === '') {
         adapter.subscribeStates('sendMessage');
