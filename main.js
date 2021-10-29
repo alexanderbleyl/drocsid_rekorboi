@@ -1,7 +1,7 @@
 'use strict';
 
 const utils = require('@iobroker/adapter-core');
-const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
 
 /**
  * The adapter instance
@@ -75,7 +75,7 @@ function main() {
         adapter.log.error('No Bot-Token given!');
         return;
     }
-    client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"], partials: ["CHANNEL"] });
+    client = new Client({ intents: [Intents.FLAGS.GUILDS] });
     client.login(adapter.config.bot_token);
     if(adapter.config.state === '') {
         adapter.subscribeStates('sendMessage');
@@ -88,8 +88,9 @@ function main() {
 
 function receiveMessage() {
     adapter.log.info('receiver activated');
-    adapter.log.info(JSON.stringify(client));
     client.on('messageCreate', async message => {
+        adapter.log.info('on messageCreate');
+        if (message.author.bot) return;
         adapter.log.info(JSON.stringify(message));
     });
 }
