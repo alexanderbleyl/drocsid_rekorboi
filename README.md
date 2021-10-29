@@ -15,7 +15,7 @@
 
 ## Discord adapter for ioBroker
 
-This adapter sends Messages to a Discord Channel using your own Bot.
+This adapter sends and receives Messages to/from a Discord Channel using your own Bot.
 
 Discord is a lot more easy to use than a WhatsApp-Bot (no phone number necessary) and saver than Telegram.
 
@@ -109,6 +109,10 @@ Your new state now has the full adress __0_userdata.0.discord_message__.
 That's your __state__-name which is the last thing this adapter needs.
 
 Whenever the content of this state changes, your Bot will send this into your Discord Channel.
+
+#### receiving Messages from Discord
+
+There's also a new State called 'receiveMessage' in your instance where the last Message from your Channel are stored.
 
 #### finaly
 
