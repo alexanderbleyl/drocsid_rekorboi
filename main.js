@@ -32,7 +32,10 @@ function startAdapter(options) {
             name: 'discord_bot',
             ready: main,
             stateChange: (id, state) => {
-                adapter.log.info(`state ${id} - ${JSON.stringify(state)}`);
+                if(id.indexOf('receiveMessage') > 0) {
+                    return;
+                }
+                // adapter.log.info(`state ${id} - ${JSON.stringify(state)}`);
                 if (state && state.val != '') {
                     try {
                         sendMessageToDiscord(state.val);
