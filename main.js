@@ -87,7 +87,7 @@ function main() {
 }
 
 function receiveMessage() {
-    client.on("message", message => {
+    client.on('messageCreate', message => {
         adapter.log.info(JSON.stringify(message));
     });
 }
