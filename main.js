@@ -32,9 +32,6 @@ function startAdapter(options) {
             name: 'discord_bot',
             ready: main,
             stateChange: (id, state) => {
-                console.log('stateChange');
-                console.log(id);
-                console.log(JSON.stringify(state));
                 if (state && state.val != '') {
                     try {
                         sendMessageToDiscord(state.val);
@@ -86,6 +83,13 @@ function main() {
         adapter.subscribeForeignStates(adapter.config.state);
     }
     adapter.subscribeStates('receiveMessage');
+    receiveMessage();
+}
+
+function receiveMessage() {
+    client.on("message", async message => {
+        adapter.log.info(JSON.stringify(message));
+    });
 }
 
 // @ts-ignore parent is a valid property on module
