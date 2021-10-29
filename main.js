@@ -32,6 +32,9 @@ function startAdapter(options) {
             name: 'discord_bot',
             ready: main,
             stateChange: (id, state) => {
+                console.log('stateChange');
+                console.log(id);
+                console.log(JSON.stringify(state));
                 if (state && state.val != '') {
                     try {
                         sendMessageToDiscord(state.val);
@@ -82,9 +85,7 @@ function main() {
     } else {
         adapter.subscribeForeignStates(adapter.config.state);
     }
-    
-    // in this template all states changes inside the adapters namespace are subscribed
-    adapter.subscribeStates('sendMessage');
+    adapter.subscribeStates('receiveMessage');
 }
 
 // @ts-ignore parent is a valid property on module
