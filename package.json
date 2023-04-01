@@ -19,7 +19,7 @@
     "url": "https://github.com/alexanderbleyl/ioBroker.discord_bot"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.5.0",
+    "@iobroker/adapter-core": "^2.6.8",
     "discord.js": "12.5.3"
   },
   "main": "main.js",
